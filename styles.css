@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    /* center */
+    background-color: blueviolet;
+    min-height: 45vw;
+}
+
+.design-container {
+    background-color: white;
+    width: 70%;
+    height: 60%;
+    /* center */
+    padding: 5%;
+}
+
+/* left side of sign container */
+
+.img-container {
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    right: 40%;
+}
+
+.svg-desktop{
+    max-width: 300%;
+    max-height: 300%;
+    z-index: 0;
+}
+
+.svg-box {
+    max-width: 50%;
+    max-height: 50%;
+    position: relative;
+    left: 30%;
+    bottom: 20%;
+}
+
+/* right side of container */
+.faq-container{
+    flex-basis: 50%;
+    align-items: start;
+    flex-direction: column;
+    padding: 0 5%;
+    gap: 15px;
+    font-size: 1vw;
+}
+
+.question-container {
+    display: flex;
+}
+
+.question-container img {
+    width: 4%;
+    height: 4%;
+    align-self: center;
+    position: relative;
+    left: 10%;
+}
+
+.line {
+    width: 90%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.575);
+}
