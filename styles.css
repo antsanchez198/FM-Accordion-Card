@@ -1,78 +1,92 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+:root {
+    --text-blue: hsl(238, 29%, 16%);
+    --text-red: hsl(14, 88%, 65%);
+    --text-darkblue: hsl(240, 6%, 50%);
+    --text-verydarkblue: hsl(237, 12%, 33%);
+    --gradient-violet: hsl(273, 75%, 66%);
+    --gradient-blue: hsl(240, 73%, 65%);
+    --divider-blue: hsl(240, 5%, 91%);
 }
 
-.center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+html {
+    box-sizing: border-box;
+    /* not sure why */
+    font-size: 100%;
+}
+
+*, *::after, *::before {
+    /* not sure why */
+    box-sizing: inherit; 
 }
 
 body {
-    /* center */
-    background-color: blueviolet;
-    min-height: 45vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Kumbh Sans', sans-serif;
+    background-image: linear-gradient(var(--gradient-violet), var(--gradient-blue));
+    padding: 3rem;
 }
 
-.design-container {
-    background-color: white;
-    width: 70%;
-    height: 60%;
-    /* center */
-    padding: 5%;
+.card {
+    background: white;
+    border-radius: 2rem;
+    /* max width helps make it more reponsive */
+    max-width: 56rem;
+    background-image: url('images/bg-pattern-mobile.svg');
+    background-repeat: no-repeat;
+    background-position: center 0%;
+    background-size: 50%;
 }
 
-/* left side of sign container */
-
-.img-container {
-    flex-basis: 50%;
-    display: flex;
-    align-items: center;
-    position: relative;
-    right: 40%;
+.card-box {
+    display: none;
 }
 
-.svg-desktop{
-    max-width: 300%;
-    max-height: 300%;
-    z-index: 0;
+.card-image img {
+    width: 100%;
+    height: auto;
+    /* research max and min width */
+    max-width: 15rem;
+    margin: auto;
+    display: block;
 }
 
-.svg-box {
-    max-width: 50%;
-    max-height: 50%;
-    position: relative;
-    left: 30%;
-    bottom: 20%;
-}
+/* 16 pixels equals 1rem/em */
+@media (min-width: 56em) {
+    /* Desktop Attributes */
+    .card {
+        position: relative;
+        display: flex;
+        margin: 6rem auto;
+        padding-right: 2rem;
+        background-image: url('images/bg-pattern-desktop.svg');
+        /* research these three */
+        background-size: 45%;
+        background-position: -13% center;
+    }
 
-/* right side of container */
-.faq-container{
-    flex-basis: 50%;
-    align-items: start;
-    flex-direction: column;
-    padding: 0 5%;
-    gap: 15px;
-    font-size: 1vw;
-}
+    .card-box {
+        display: block;
+        position: absolute;
+        top: 57%;
+        left: 0;
+        transform: translateX(-50%) translateY(-50%);
+        z-index: 1;
+    }
 
-.question-container {
-    display: flex;
-}
+    .card-image, .card-text {
+        flex: 1;
+    } 
 
-.question-container img {
-    width: 4%;
-    height: 4%;
-    align-self: center;
-    position: relative;
-    left: 10%;
-}
+    .card-image {
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+    }
 
-.line {
-    width: 90%;
-    height: 2px;
-    background-color: rgba(0, 0, 0, 0.575);
+    .card-image img {
+        transform: translateX(-4rem);
+        max-width: 25rem;
+    }
 }
